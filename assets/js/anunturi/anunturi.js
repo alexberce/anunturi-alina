@@ -1,16 +1,12 @@
 
-$('#type').change(function(){
-	show_hide_sections();
-});
-
 $(document).ready(function(){    
-	show_hide_sections();
-    
+
     $('#anunt_add_submit').click(function(event){
         event.stopPropagation();
         $('#file_upload').attr('action' , 'index.php?page=anunt&&action=add');
         $('#file_upload').submit();
     });
+    
     $('.image-wrapper')
         .mouseenter(function() {
         $(this).find('.image-title').show();
@@ -18,6 +14,12 @@ $(document).ready(function(){
         .mouseleave(function() {
         $(this).find('.image-title').hide();
         });
+    
+});
+
+show_hide_sections();
+$('#type').change(function(){
+	show_hide_sections();
 });
 
 function show_hide_sections(){

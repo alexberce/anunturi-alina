@@ -8,6 +8,7 @@
             <div class="button" ><div class="button_input"><input class="hideradio" id='radio_offerrent' type="radio" name="real_estate_type" value="offer rent" ><label for='radio_offerrent' class="label1">Offer for rent</label></div></div>
             <div class="button" ><div class="button_input"><input class="hideradio" id='radio_lookrent' type="radio" value="search rent" name="real_estate_type" ><label for='radio_lookrent' class="label1">Looking for rent</label></div></div>
             <div class="clear"></div>
+        <?php echo validation_errors('<div class="alert alert-danger">','</div>');?>
          <div class="input">
             <label>
             <div class="text">Type: </div>
@@ -65,7 +66,6 @@
             </div>
             </label>
         </div>
-            <div><?=form_error('bathrooms');?></div>
         <div class="input" id='bathrooms'>
             <label>
             <div class="text">Bathrooms: </div>
@@ -164,10 +164,6 @@
             <div> <input class="inputs" placeholder="Enter the price" id="price" type="text" name="price"  value=<?=@$price ?>></div>
         </div>
         
-        <div class="input">
-            <div class="text"></div>
-            <input id="negotiable"class="price_check" type="checkbox" name="price_check" value="negotiable" ><label for="negotiable">the price is negotiable</label>
-        </div>
         <hr>
         
         <div class="input">

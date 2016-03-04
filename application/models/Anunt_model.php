@@ -17,10 +17,11 @@
                 $this->db->like('anunturi.type',$term);
                 $this->db->or_like('anunturi.details',$term);
                 $this->db->or_like('anunturi.price',$term);
+                
             }
             
             if($page !== null)
-                $this->db->limit(2,$page);
+                $this->db->limit(4,$page);
             
             $this->db->order_by('anunturi.id', 'ASC');
             $query=$this->db->get();
@@ -34,7 +35,8 @@
             {
                 $this->db->like('anunturi.type',$term);
                 $this->db->or_like('anunturi.details',$term);    
-                $this->db->or_like('anunturi.price',$term);    
+                $this->db->or_like('anunturi.price',$term);
+                
             }
             $query = $this->db->get();
             return $query->row()->total_anunturi;
