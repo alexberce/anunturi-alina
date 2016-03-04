@@ -5,7 +5,7 @@
                
                <form action='<?=base_url()?>anunt' method="get">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12" style="margin-top:100px">
                         <div id="custom-search-input">
                             <div class="input-group col-md-12">
                                 <input type="text" class="form-control input-lg" placeholder="Search..." name="term" />
@@ -19,13 +19,35 @@
                     </div>
                 </div>
                </form>
-                 <div class="col-md-12" style="margin-top:225px">
-                  <div class="col-md-3">
-                      <div class="type_anunt"><div class="type_button_text">Sell</div></div>
+                 <div class="col-md-12" style="margin-top:125px">
+                  <div class="col-md-3" style="padding:0;margin:0">
+                      <div class="type_anunt">
+                          <div class="type_button_text">
+                              <input class="hideradio" id='radio_sell' type="radio" name="type" value="sell">Sell
+                          </div>                      
+                      </div>
                   </div>
-                  <div class="col-md-3"><div class="type_anunt"><div class="type_button_text">Buy</div></div></div>
-                  <div class="col-md-3"><div class="type_anunt"><div class="type_button_text">Offer rent</div></div></div>
-                  <div class="col-md-3"><div class="type_anunt"><div class="type_button_text">Looking for rent</div></div></div>
+                  <div class="col-md-3" style="padding:0;margin:0">
+                      <div class="type_anunt">
+                        <div class="type_button_text">
+                            <input class="hideradio" id='radio_buy' type="radio" name="type" value="buy">Buy
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col-md-3" style="padding:0;margin:0">
+                      <div class="type_anunt">
+                          <div class="type_button_text">
+                              <input class="hideradio" id='radio_offer_rent' type="radio" name="type" value="offer_rent">Offer rent
+                          </div>
+                      </div>
+                     </div>
+                  <div class="col-md-3" style="padding:0;margin:0">
+                      <div class="type_anunt">
+                          <div class="type_button_text">
+                              <input class="hideradio" id='radio_look_rent' type="radio" name="type" value="look_rent">Looking for rent
+                          </div>
+                      </div>
+                     </div>
                   </div>
                    
                </div>

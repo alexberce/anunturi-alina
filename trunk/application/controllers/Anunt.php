@@ -28,7 +28,7 @@ class Anunt extends CI_Controller{
             $config['base_url'] = base_url() . 'anunt/term/' . $term . '/page/';
         
         $config['total_rows'] = $this->Anunt_model->count_anunturi($term);
-        $config['per_page'] = 2; 
+        $config['per_page'] = 4; 
         $config['full_tag_open'] = '<ul class="pagination">';
         $config['full_tag_close'] = '</ul>';
         $config['first_link'] = false;
@@ -54,9 +54,11 @@ class Anunt extends CI_Controller{
         $this->load->view('layout',$this->data);
     }
     public function add(){
-        $this->data['view']='anunt_add';
-        $this->load->view('layout',$this->data);
-        $this->form_validation->set_rules('bathrooms', 'Bathrooms', 'required');
+        $this->form_validation->set_rules('real_estate_type', 'Real Estate Type', 'required');
+        $this->form_validation->set_rules('price', 'Price', 'required');
+        $this->form_validation->set_rules('country', 'Country', 'required');
+        $this->form_validation->set_rules('county', 'County', 'required');
+        $this->form_validation->set_rules('city', 'City', 'required');
         $data=array(
             'bathrooms'=>$this->input->post('bathrooms'),
             'rooms'=>$this->input->post('rooms'),
@@ -78,12 +80,13 @@ class Anunt extends CI_Controller{
             'comfort'=>$this->input->post('comfort'),
             'floor'=>$this->input->post('floor'),
             'extra_floors'=>$this->input->post('extra_floors'),
-            'price_check'=>$this->input->post('price_check'),
             'upload_id' =>$this->input->post('file_id')
         );
         if($this->form_validation->run() === true){
             $this->Anunt_model->add($data);
-        } 
+        }
+        $this->data['view']='anunt_add';
+        $this->load->view('layout',$this->data);
     }
     public function view(){
         

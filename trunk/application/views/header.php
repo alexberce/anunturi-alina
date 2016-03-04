@@ -20,6 +20,8 @@
 		<noscript><link rel="stylesheet" href="<?=base_url();?>assets/css/upload_photo_css/jquery.fileupload-ui-noscript.css"></noscript>
           <link rel="stylesheet" href="<?=base_url();?>assets/css/style.css"/>
           <script src="<?=base_url();?>assets/js/jquery-1.11.3.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 
     </head>
     <body id='page-top'>
@@ -43,17 +45,30 @@
                             <a class="page-scroll" href="<?=base_url();?>">Home</a>
                         </li>
                         <li>
-                            <a class="page-scroll" href="<?=base_url();?>anunt/add">Add annouce</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#portfolio">Portfolio</a>
+                            <a class="page-scroll" href="<?=base_url();?>anunt/add">Add announce</a>
                         </li>
                         <li>
                             <a class="page-scroll" href="#contact">Contact</a>
                         </li>
-                         <li>
+                         
+                             <?php
+                        if($this->session->userdata('loggedIn') == false){
+                        ?>
+                        <li>
                             <a class="page-scroll" href="<?=base_url();?>account/login">Login / Register</a>
                         </li>
+                             <?php } else {?>
+                        
+                        <li>
+                            <a id="logout_button"  class="page-scroll" href="<?=base_url();?>account/logout">Logout</a>
+                        </li>
+                        <li>
+                             <a id="username_email" class="page-scroll" style="color:#fff;font-weight:bold"><?php echo $this->session->userdata("username") ;?>{<?php echo $this->session->userdata("email"); ?>}</a>
+                        </li>
+                             <?php } ?>
+                        
+                        
+                        
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
